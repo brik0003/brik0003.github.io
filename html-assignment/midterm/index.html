@@ -3,192 +3,190 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deep Shark</title>
+    <title>Lone Dolphin</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <!-- big banner image with title on top -->
-    <div id="banner">
-      <img
-        id="banner-img"
-        src="images/shark-wide.jpg"
-        alt="shark swimming in the deep ocean"
-      />
-      <h1 id="banner-title">Deep Shark</h1>
-    </div>
-
-    <!-- site navigation -->
-    <div id="navbar">
-      <ul id="navbar-list">
-        <li class="navbar-item">
-          <a class="navbar-link" href="#page-top">Home</a>
-        </li>
-        <li class="navbar-item">
-          <a class="navbar-link" href="#shark-facts">Facts</a>
-        </li>
-        <li class="navbar-item">
-          <a class="navbar-link" href="#reach-out">Contact</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- all page content -->
-    <div id="page-top" class="page-content">
-      <!-- article with floated image -->
-      <div id="shark-story">
-        <h2 class="block-title">Life of a Shark</h2>
-        <!-- small shark pic floats left -->
+    <div id="page-wrap">
+      <!-- top banner with title -->
+      <div id="site-banner">
         <img
-          id="shark-pic"
-          src="images/shark.jpg"
-          alt="close up of a shark underwater"
+          id="banner-img"
+          src="images/lone-dolphin-wide.jpg"
+          alt="dolphin jumping out of the water"
         />
-        <p class="para">
-          Sharks are among the oldest and most successful predators on Earth,
-          having roamed the world's oceans for more than 450 million years -
-          long before the dinosaurs appeared. There are more than 500 known
-          species of shark, ranging from the tiny dwarf lanternshark, which fits
-          in the palm of a hand, to the magnificent whale shark, the largest
-          fish in the ocean, which can grow up to 18 metres in length. Despite
-          their fearsome reputation, the vast majority of shark species are
-          completely harmless to humans and play a crucial role in maintaining
-          the health of marine ecosystems. As apex predators, sharks regulate
-          the populations of the species below them in the food chain,
-          preventing any single species from dominating and disrupting the
-          balance of ocean life. Sharks do not have bones - their skeletons are
-          made entirely of cartilage, which is lighter and more flexible than
-          bone, allowing them to move through the water with remarkable
-          efficiency. Their skin is covered in tiny tooth-like scales called
-          dermal denticles, which reduce drag and allow them to swim faster and
-          more quietly than most other fish. Sharks have an extraordinary array
-          of senses including an ability to detect the electrical fields
-          produced by other animals through special organs called the ampullae
-          of Lorenzini, making them highly effective hunters even in complete
-          darkness or murky water. Many shark species must keep swimming
-          constantly to push water over their gills and breathe, meaning they
-          effectively never stop moving throughout their entire lives. Sharks
-          give birth in a variety of ways depending on the species - some lay
-          eggs, others give birth to live young, and some practice a remarkable
-          phenomenon called intrauterine cannibalism where the strongest embryo
-          consumes its siblings before birth. Despite being apex predators
-          themselves, sharks face serious threats from human activity including
-          overfishing, finning, bycatch, and habitat destruction, with many
-          species now classified as endangered or critically endangered.
-        </p>
-        <p class="para">
-          The deep sea is home to some of the most mysterious and least
-          understood shark species on the planet. The goblin shark, with its
-          distinctive elongated snout and protrusible jaws, lurks in the
-          darkness at depths of over 1,200 metres. The frilled shark, often
-          described as a living fossil, resembles an eel more than a typical
-          shark and has changed very little in millions of years. Greenland
-          sharks are among the longest-living vertebrates on Earth, with some
-          individuals estimated to be over 400 years old based on carbon dating
-          of their eye lenses. These ancient creatures move so slowly through
-          the freezing Arctic waters that they are nearly blind and often carry
-          parasites on their eyes, yet they manage to prey on seals, fish, and
-          even reindeer that wander too close to the water's edge.
-        </p>
+        <p id="banner-title">Lone Dolphin</p>
       </div>
 
-      <!-- facts using a proper list -->
-      <div id="shark-facts">
-        <h2 class="block-title">Facts About Sharks</h2>
-        <ul class="facts-ul">
-          <li class="facts-ul__li">
-            Sharks have been on Earth for over 450 million years, predating even
-            the first trees which appeared around 350 million years ago.
+      <!-- site links -->
+      <div id="site-nav">
+        <ul id="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#dolphin-facts">Fact</a>
           </li>
-          <li class="facts-ul__li">
-            A shark can go through up to 30,000 teeth in its lifetime as old
-            teeth fall out and new ones move forward to replace them.
-          </li>
-          <li class="facts-ul__li">
-            The whale shark is the largest fish in the ocean but feeds only on
-            tiny plankton, krill, and small fish filtered through its enormous
-            mouth.
-          </li>
-          <li class="facts-ul__li">
-            Sharks are more likely to be killed by humans than to kill them -
-            approximately 100 million sharks are killed by humans every year.
-          </li>
-          <li class="facts-ul__li">
-            The Greenland shark grows only about one centimetre per year and may
-            live for over 400 years, making it the longest-lived vertebrate
-            known to science.
+          <li class="nav-item">
+            <a class="nav-link" href="#reach-us">Contact</a>
           </li>
         </ul>
       </div>
 
-      <!-- contact form -->
-      <div id="reach-out">
-        <h2 class="block-title">Contact to learn more</h2>
-        <form id="the-form" action="#" method="post">
-          <div class="input-block">
-            <label class="input-block__label" for="v-name">Your Name</label>
-            <input
-              class="input-block__field"
-              type="text"
-              id="v-name"
-              name="v-name"
-              placeholder="Enter your full name"
+      <div id="home">
+        <!-- story part -->
+        <div id="dolphin-story">
+          <h2 class="section-title">Life of a Dolphin</h2>
+          <div class="story-body">
+            <img
+              class="story-img"
+              src="images/lone-dolphin.jpg"
+              alt="dolphin swimming in the ocean"
             />
+            <p class="story-text">
+              Dolphins are highly intelligent marine mammals that belong to the
+              order Cetacea, which also includes whales and porpoises. They are
+              found in oceans and seas around the world, from tropical to
+              temperate waters, and some species even inhabit freshwater rivers.
+              Dolphins are known for their playful behaviour, often riding the
+              bow waves of boats and leaping high out of the water. They
+              communicate using a sophisticated system of clicks, whistles, and
+              body movements that researchers are still working to fully
+              understand. A group of dolphins is called a pod, and these social
+              creatures rely on their pod for protection, hunting, and
+              companionship throughout their lives. Bottlenose dolphins are
+              among the most well-studied species and are commonly seen in
+              coastal waters. They have a lifespan of up to 40 to 50 years in
+              the wild and are capable of diving to depths of over 300 metres.
+              Dolphins feed primarily on fish and squid, using a technique
+              called echolocation to detect prey even in murky or dark water.
+              Their streamlined bodies allow them to swim at speeds of up to 37
+              kilometres per hour, making them one of the fastest creatures in
+              the ocean. Scientists have observed dolphins using tools, such as
+              marine sponges, to protect their snouts while foraging on the
+              seafloor, which is a rare behaviour seen in very few non-human
+              animals. Conservation efforts around the world aim to protect
+              dolphin populations from threats such as fishing nets, pollution,
+              and habitat loss caused by human activity.
+            </p>
+            <p class="story-text">
+              In many coastal regions, dolphins play an important role in the
+              local ecosystem by helping keep fish populations balanced and by
+              acting as indicators of ocean health. Their bodies are built for
+              efficient movement: a powerful tail provides thrust, while their
+              dorsal fin helps with stability as they turn and accelerate. Some
+              species migrate seasonally to follow food or warmer water, while
+              others stay close to bays and estuaries where prey is abundant.
+              Dolphins are also known for forming long-term social bonds, and
+              they may cooperate in groups to herd fish into tight bait balls
+              before feeding. Researchers continue to study dolphin
+              communication and learning, hoping to better understand how pods
+              share knowledge across generations.
+            </p>
           </div>
+        </div>
 
-          <div class="input-block">
-            <label class="input-block__label" for="v-email">Your Email</label>
-            <input
-              class="input-block__field"
-              type="email"
-              id="v-email"
-              name="v-email"
-              placeholder="Enter your email address"
-            />
-          </div>
+        <!-- facts list -->
+        <div id="dolphin-facts">
+          <h2 class="section-title">Facts About Dolphins</h2>
+          <ul class="facts-list">
+            <li class="fact-item">
+              Dolphins breathe air through a blowhole located on the top of
+              their head.
+            </li>
+            <li class="fact-item">
+              They sleep with one eye open, resting only half of their brain at
+              a time.
+            </li>
+            <li class="fact-item">
+              Dolphins can recognise themselves in a mirror, showing
+              self-awareness.
+            </li>
+            <li class="fact-item">
+              A newborn dolphin calf can swim immediately after birth and stays
+              close to its mother.
+            </li>
+            <li class="fact-item">
+              Dolphins have been recorded teaching their young how to use tools
+              to find food.
+            </li>
+          </ul>
+        </div>
 
-          <div class="input-block">
-            <label class="input-block__label" for="v-msg">Your Message</label>
-            <textarea
-              class="input-block__field input-block__field--tall"
-              id="v-msg"
-              name="v-msg"
-              placeholder="Write your message here"
-            ></textarea>
-          </div>
-
-          <!-- radio buttons each linked to label -->
-          <fieldset class="yesno">
-            <legend class="input-block__label">
-              Would you like to dive with sharks?
-            </legend>
-            <div class="yesno__options">
-              <label for="yn-yes"
-                ><input type="radio" id="yn-yes" name="dive" value="yes" />
-                Yes</label
-              >
-              <label for="yn-no"
-                ><input type="radio" id="yn-no" name="dive" value="no" />
-                No</label
-              >
-              <label for="yn-maybe"
-                ><input type="radio" id="yn-maybe" name="dive" value="maybe" />
-                Maybe</label
-              >
+        <!-- get in touch form -->
+        <div id="reach-us">
+          <h2 class="section-title">Contact to learn more</h2>
+          <form id="contact-form" method="post" action="#">
+            <div class="input-row">
+              <label class="input-label" for="visitor-name">Your Name</label>
+              <input
+                class="input-box"
+                type="text"
+                id="visitor-name"
+                name="visitor-name"
+                placeholder="Enter your full name"
+              />
             </div>
-          </fieldset>
 
-          <button class="go-btn" type="submit">Send</button>
-        </form>
+            <div class="input-row">
+              <label class="input-label" for="visitor-email">Your Email</label>
+              <input
+                class="input-box"
+                type="email"
+                id="visitor-email"
+                name="visitor-email"
+                placeholder="Enter your email address"
+              />
+            </div>
+
+            <div class="input-row">
+              <label class="input-label" for="visitor-msg">Your Message</label>
+              <textarea
+                class="input-box msg-box"
+                id="visitor-msg"
+                name="visitor-msg"
+                placeholder="Write your message here"
+              ></textarea>
+            </div>
+
+            <fieldset class="swim-question">
+              <legend class="input-label">
+                Would you like to swim with dolphins?
+              </legend>
+              <div class="swim-choices">
+                <label for="swim-yes"
+                  ><input type="radio" id="swim-yes" name="swim" value="yes" />
+                  Yes</label
+                >
+                <label for="swim-no"
+                  ><input type="radio" id="swim-no" name="swim" value="no" />
+                  No</label
+                >
+                <label for="swim-maybe"
+                  ><input
+                    type="radio"
+                    id="swim-maybe"
+                    name="swim"
+                    value="maybe"
+                  />
+                  Maybe</label
+                >
+              </div>
+            </fieldset>
+
+            <button class="send-btn" type="submit">Send</button>
+          </form>
+        </div>
       </div>
+      <!-- end #home -->
     </div>
+    <!-- end #page-wrap -->
 
-    <!-- footer -->
-    <div id="footer">
-      <p>&copy; Deep Shark.</p>
+    <!-- copyright line -->
+    <div id="site-footer">
+      <p>&copy; Lone Dolphin.</p>
     </div>
   </body>
 </html>

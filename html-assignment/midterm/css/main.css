@@ -1,14 +1,13 @@
-/* warm earthy colour palette for deep shark */
+/* fonts and colours i'm using */
 :root {
-  --sand: #c8a96e;
-  --sand-light: #f5ede0;
-  --rust: #8b4513;
-  --rust-mid: #a0522d;
-  --mud: #3d2b1f;
-  --body-txt: #4a3728;
+  --deep: #1a6b8a;
+  --mid: #2e90b5;
+  --pale: #cce8f4;
+  --offwhite: #f0f8fc;
+  --dark-txt: #1c2d3a;
+  --grey-txt: #3a4f5c;
   --white: #ffffff;
-  --form-bg: #fdf6ee;
-  --divider: #dcc9b0;
+  --line: #b0d4e8;
 }
 
 * {
@@ -22,263 +21,288 @@ html {
 }
 
 body {
-  font-family: "Libre Baskerville", Georgia, serif;
+  background:
+    radial-gradient(
+      1200px 650px at 18% 0%,
+      rgba(46, 144, 181, 0.26) 0%,
+      rgba(46, 144, 181, 0) 60%
+    ),
+    radial-gradient(
+      1000px 520px at 88% 14%,
+      rgba(26, 107, 138, 0.16) 0%,
+      rgba(26, 107, 138, 0) 62%
+    ),
+    linear-gradient(
+      180deg,
+      var(--pale) 0%,
+      var(--offwhite) 70%,
+      var(--pale) 100%
+    );
+  color: var(--dark-txt);
   font-size: 15px;
-  line-height: 1.8;
-  color: var(--body-txt);
-  background-color: var(--sand-light);
+  line-height: 1.75;
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-weight: 400;
 }
 
-/* banner */
-#banner {
+/* the whole page sits inside this */
+#page-wrap {
   width: 100%;
+}
+
+/* banner at the top */
+#site-banner {
   height: 220px;
+  width: 100%;
   overflow: hidden;
   position: relative;
+  border-radius: 12px;
+  box-shadow: 0 12px 26px rgba(26, 107, 138, 0.18);
 }
 
 #banner-img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
-  display: block;
+  object-position: center top;
 }
 
-/* title over banner */
+/* on large screens, shift the crop down a bit so the dolphin stays visible */
+@media (min-width: 1024px) {
+  #banner-img {
+    object-position: center 40%;
+  }
+}
+
+/* title sitting over the banner image */
 #banner-title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 2.4rem;
-  font-weight: 600;
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 2.3rem;
+  font-weight: 700;
   color: var(--white);
   white-space: nowrap;
-  letter-spacing: 0.08em;
-  text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.05em;
+  text-shadow: 1px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* navbar */
-#navbar {
-  background-color: var(--white);
-  border-bottom: 2px solid var(--sand);
+/* push the title lower on medium/small screens */
+@media (max-width: 900px) {
+  #banner-title {
+    top: 66%;
+  }
 }
 
-#navbar-list {
+@media (max-width: 520px) {
+  #banner-title {
+    top: 74%;
+  }
+}
+
+/* nav strip */
+#site-nav {
+  background: var(--white);
+  border-bottom: 2px solid var(--mid);
+}
+
+#nav-list {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
 }
 
-.navbar-item {
-  flex: 1;
-  border-right: 1px solid var(--divider);
+.nav-item {
+  border-right: 1px solid var(--line);
 }
 
-.navbar-item:last-child {
+.nav-item:last-child {
   border-right: none;
 }
 
-.navbar-link {
+.nav-link {
   display: block;
   text-align: center;
   padding: 0.75rem 0;
   text-decoration: none;
-  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mud);
-  transition:
-    background 0.2s,
-    color 0.2s;
+  color: var(--dark-txt);
+  font-family: "Source Sans 3", sans-serif;
 }
 
-.navbar-link:hover {
-  background-color: var(--sand-light);
-  color: var(--rust);
+.nav-link:hover {
+  background-color: var(--pale);
+  color: var(--deep);
 }
 
-/* white content area */
-.page-content {
+/* main content area */
+#home {
   background-color: var(--white);
   padding: 2.2rem clamp(1rem, 4vw, 2.8rem) 3rem;
 }
 
-/* section headings */
-.block-title {
-  font-family: "Josefin Sans", sans-serif;
+/* shared heading style for all sections */
+.section-title {
+  font-family: "Merriweather", serif;
   font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--mud);
+  font-weight: 700;
+  color: var(--dark-txt);
   margin-bottom: 1rem;
-  letter-spacing: 0.04em;
 }
 
 /* story section */
-#shark-story {
+#dolphin-story {
   margin-bottom: 2.8rem;
-  padding-bottom: 2.8rem;
-  border-bottom: 1px solid var(--divider);
-  overflow: hidden;
 }
 
-/* small shark image floats left */
-#shark-pic {
+.story-body {
+  display: block;
+}
+
+/* image floats left, text wraps around it */
+.story-img {
   float: left;
   width: 178px;
   height: 138px;
   object-fit: cover;
-  object-position: center;
   margin: 0 1.3rem 0.8rem 0;
-  border: 3px solid var(--sand-light);
-  border-radius: 6px;
+  border: 3px solid var(--pale);
+  border-radius: 10px;
+  box-shadow: 0 10px 18px rgba(26, 107, 138, 0.16);
 }
 
-.para {
-  font-size: 0.88rem;
-  color: var(--body-txt);
+/* clear after float */
+.story-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.story-text {
+  font-size: 0.87rem;
+  color: var(--grey-txt);
   text-align: justify;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.6rem;
 }
 
 /* facts */
-#shark-facts {
+#dolphin-facts {
   margin-bottom: 2.8rem;
-  padding-bottom: 2.8rem;
-  border-bottom: 1px solid var(--divider);
 }
 
-.facts-ul {
-  list-style: disc;
+.facts-list {
   padding-left: 1.5rem;
+  list-style: disc;
 }
 
-.facts-ul__li {
-  font-size: 0.88rem;
-  color: var(--body-txt);
-  margin-bottom: 0.4rem;
+.fact-item {
+  font-size: 0.86rem;
+  color: var(--grey-txt);
+  margin-bottom: 0.35rem;
 }
 
 /* contact */
-#reach-out {
+#reach-us {
   margin-bottom: 1rem;
 }
 
-#the-form {
-  background-color: var(--form-bg);
-  border: 1px solid var(--divider);
+#contact-form {
+  background-color: var(--offwhite);
+  border: 1px solid var(--line);
   padding: 1.6rem;
+  display: grid;
+  gap: 1rem;
+  border-radius: 12px;
 }
 
-/* label + input wrapper */
-.input-block {
-  margin-bottom: 1rem;
+/* each label + input pair */
+.input-row {
+  display: grid;
+  gap: 0.25rem;
 }
 
-.input-block__label {
-  display: block;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 0.78rem;
+.input-label {
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--mud);
-  margin-bottom: 0.3rem;
+  color: var(--dark-txt);
 }
 
-.input-block__field {
+/* no border-radius to match original flat style */
+.input-box {
   width: 100%;
   padding: 0.45rem 0.65rem;
-  font-size: 0.88rem;
-  font-family: "Libre Baskerville", serif;
-  color: var(--body-txt);
+  font-size: 0.87rem;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--dark-txt);
   background: var(--white);
-  border: 1px solid var(--divider);
+  border: 1px solid var(--line);
+  border-radius: 10px;
   outline: none;
-  transition: border-color 0.2s;
 }
 
-.input-block__field:focus {
-  border-color: var(--rust);
+.input-box:focus {
+  border-color: var(--deep);
 }
 
-.input-block__field--tall {
+.msg-box {
   resize: vertical;
   min-height: 88px;
 }
 
-/* radio group */
-.yesno {
+/* radio fieldset */
+.swim-question {
   border: none;
   padding: 0;
-  margin-bottom: 1rem;
 }
 
-.yesno legend {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--mud);
-  margin-bottom: 0.4rem;
-}
-
-.yesno__options {
+.swim-choices {
   display: flex;
   gap: 1.3rem;
+  margin-top: 0.3rem;
 }
 
-.yesno__options label {
-  font-size: 0.88rem;
-  color: var(--body-txt);
+.swim-choices label {
+  font-size: 0.86rem;
+  color: var(--grey-txt);
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
   cursor: pointer;
 }
 
-/* send button */
-.go-btn {
-  display: inline-block;
+/* flat square button to match original */
+.send-btn {
+  justify-self: start;
   padding: 0.42rem 1.3rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  background-color: var(--rust);
+  font-family: "Source Sans 3", sans-serif;
+  background-color: var(--deep);
   color: var(--white);
   border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
-.go-btn:hover {
-  background-color: var(--rust-mid);
+.send-btn:hover {
+  background-color: var(--mid);
 }
 
 /* footer */
-#footer {
-  background-color: var(--mud);
-  border-top: 1px solid var(--rust);
+#site-footer {
+  background-color: var(--white);
+  border-top: 1px solid var(--line);
   padding: 0.65rem clamp(1rem, 4vw, 2.8rem);
   text-align: right;
   font-size: 0.78rem;
-  color: var(--sand);
-}
-
-/* large screens */
-@media (min-width: 1024px) {
-  #banner {
-    height: 280px;
-  }
-
-  .page-content {
-    padding: 3rem 8.2rem 4rem;
-  }
+  color: var(--grey-txt);
 }
