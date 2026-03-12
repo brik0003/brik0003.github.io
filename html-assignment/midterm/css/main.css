@@ -21,23 +21,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(
-      1200px 650px at 18% 0%,
-      rgba(46, 144, 181, 0.26) 0%,
-      rgba(46, 144, 181, 0) 60%
-    ),
-    radial-gradient(
-      1000px 520px at 88% 14%,
-      rgba(26, 107, 138, 0.16) 0%,
-      rgba(26, 107, 138, 0) 62%
-    ),
-    linear-gradient(
-      180deg,
-      var(--pale) 0%,
-      var(--offwhite) 70%,
-      var(--pale) 100%
-    );
+  background-color: var(--offwhite);
   color: var(--dark-txt);
   font-size: 15px;
   line-height: 1.75;
@@ -144,7 +128,7 @@ body {
 
 /* main content area */
 #home {
-  background-color: var(--white);
+  background-color: var(--offwhite);
   padding: 2.2rem clamp(1rem, 4vw, 2.8rem) 3rem;
 }
 
@@ -214,12 +198,11 @@ body {
 }
 
 #contact-form {
-  background-color: var(--offwhite);
-  border: 1px solid var(--line);
+  background-color: var(--deep);
+  border: 1px solid black;
   padding: 1.6rem;
   display: grid;
   gap: 1rem;
-  border-radius: 12px;
 }
 
 /* each label + input pair */
@@ -242,13 +225,13 @@ body {
   font-family: "Source Sans 3", sans-serif;
   color: var(--dark-txt);
   background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 0; 
   outline: none;
 }
 
 .input-box:focus {
-  border-color: var(--deep);
+  border-color: black;
 }
 
 .msg-box {
@@ -270,14 +253,14 @@ body {
 
 .swim-choices label {
   font-size: 0.86rem;
-  color: var(--grey-txt);
+ 
   display: flex;
   align-items: center;
   gap: 0.35rem;
   cursor: pointer;
 }
 
-/* flat square button to match original */
+/* flat square button */
 .send-btn {
   justify-self: start;
   padding: 0.42rem 1.3rem;
@@ -288,8 +271,8 @@ body {
   font-family: "Source Sans 3", sans-serif;
   background-color: var(--deep);
   color: var(--white);
-  border: none;
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 0;
   cursor: pointer;
 }
 
